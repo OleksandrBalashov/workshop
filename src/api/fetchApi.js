@@ -23,11 +23,7 @@ export const updateAdvert = async (id, body) => {
 };
 
 export const findAdvertById = async (id) => {
-  try {
-    const { data } = await axios.get(`/${id}`);
+  const { data } = await axios.get(`/${id}`);
 
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  return data;
 };

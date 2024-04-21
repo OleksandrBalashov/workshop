@@ -13,7 +13,9 @@ import {
 } from "../../redux/slices/selectors";
 import "./catalogPage.scss";
 import { increasePage } from "../../redux/slices/pageSlice";
-import AdvertModalContext from "../../components/Modal/AdvertModal/ModalContext";
+import AdvertModalContext, {
+  useAdvertModalContext,
+} from "../../components/Modal/AdvertModal/ModalContext";
 import AdvertModal from "../../components/Modal/AdvertModal";
 
 const { Content, Sider } = Layout;
@@ -24,6 +26,7 @@ const Catalog = () => {
   const collection = useSelector(getCollection);
   const filters = useSelector(getFilters);
   const page = useSelector(getPage);
+  const { isOpen, cardId } = useAdvertModalContext();
 
   const [pageCollection, setPageCollection] = useState([]);
   const [postsPerPage] = useState(4);
@@ -103,7 +106,7 @@ const Catalog = () => {
               Load More
             </Button>
           )}
-          <AdvertModal />
+          {isOpen && <AdvertModal cardId={cardId} />}
         </Content>
       </Layout>
     </Layout>

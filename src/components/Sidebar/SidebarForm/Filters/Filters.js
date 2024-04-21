@@ -4,7 +4,7 @@ import FilterList from "./FilterList/FilterList";
 
 const Filters = ({ title, filters, filterName, type }) => {
   return (
-    <div className='wrapper'>
+    <div className='filterWrapper'>
       <h4 className='title'>{title}</h4>
       <Divider />
       <Space>

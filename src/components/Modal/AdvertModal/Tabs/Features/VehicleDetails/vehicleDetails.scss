@@ -1,0 +1,22 @@
+.vehicleDetails {
+  .title {
+    font-size: 20px;
+  }
+
+  .detailsList {
+    padding: 0;
+    list-style: none;
+
+    .detailsItem {
+      display: flex;
+      text-transform: capitalize;
+      font-size: 18px;
+      line-height: 1.33;
+      margin-bottom: 5px;
+
+      .detailsValue {
+        margin-left: auto;
+      }
+    }
+  }
+}

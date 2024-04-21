@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+
+  .reviews {
+    margin-right: 16px;
+    text-decoration: underline;
+
+    .iconStar {
+      margin-right: 5px;
+
+      svg {
+        fill: #ffc531;
+      }
+    }
+  }
+
+  .location {
+    margin-left: 3px;
+  }
+}

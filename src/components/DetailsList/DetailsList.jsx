@@ -1,7 +1,6 @@
-import React from "react";
 import "./detailsList.scss";
 
-const DetailsList = ({ details, total = 6 }) => {
+const DetailsList = ({ details, total = -1 }) => {
   const collection = Object.keys(details).slice(0, total);
 
   return (

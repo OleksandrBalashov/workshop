@@ -1,0 +1,33 @@
+.renderWrapper {
+  margin-bottom: 0;
+
+  .title {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  .rating {
+    margin-bottom: 10px;
+  }
+
+  .price {
+    margin: 0;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .imgWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      border-radius: 5px;
+    }
+  }
+
+  .description {
+    color: #475467;
+  }
+}

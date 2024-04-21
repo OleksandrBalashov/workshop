@@ -1,14 +1,11 @@
 import { Avatar, Card, Button } from "antd";
-import {
-  HeartOutlined,
-  StarFilled,
-  EnvironmentOutlined,
-} from "@ant-design/icons";
+import { HeartOutlined } from "@ant-design/icons";
 import "./advertCard.scss";
 import DetailsList from "../../DetailsList";
 import { updateAdvert } from "../../../api/fetchApi";
 import { useState } from "react";
 import { useAdvertModalContext } from "../../Modal/AdvertModal/ModalContext";
+import ReviewRating from "../../ReviewRating";
 const { Meta } = Card;
 
 const AdvertCard = ({
@@ -55,21 +52,18 @@ const AdvertCard = ({
               />
             </div>
 
-            <div className='reviewWrapper'>
-              <div className='reviews'>
-                <StarFilled className='iconStar' />
-                <span>{`${rating} (${reviews.length} Reviews)`}</span>
-              </div>
-              <div>
-                <EnvironmentOutlined />
-                <span className='location'>{location}</span>
-              </div>
+            <div className='rating'>
+              <ReviewRating
+                rating={rating}
+                reviews={reviews}
+                location={location}
+              />
             </div>
 
             <p className='description'>{description}</p>
 
             <div className='detailsWrp'>
-              <DetailsList details={details} />
+              <DetailsList details={details} total={6} />
             </div>
             <Button
               className='showMoreBtn'
