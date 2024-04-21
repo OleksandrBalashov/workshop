@@ -1,5 +1,6 @@
 import { Form, Field } from "react-final-form";
 import InputLocation from "./InputLocation";
+import { Button } from "antd";
 import {
   equipmentFilters,
   typeFilters,
@@ -13,7 +14,6 @@ const SidebarForm = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (formValues) => {
-    console.log(formValues);
     dispatch(resetPage());
     dispatch(addFilters(formValues));
   };
@@ -34,7 +34,9 @@ const SidebarForm = () => {
         filterName='form'
         filters={typeFilters}
       />
-      <button type='submit'>Search</button>
+      <Button htmlType='submit' type='primary'>
+        Search
+      </Button>
     </form>
   );
 

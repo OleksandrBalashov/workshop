@@ -1,0 +1,24 @@
+.bookFormWrapper {
+  display: block;
+  padding: 20px;
+  border: 1px solid rgb(16, 24, 40, 0.1);
+  border-radius: 10px;
+
+  .title {
+    margin: 0;
+  }
+
+  .discription {
+    margin: 0 0 10px 0;
+    color: grey;
+  }
+
+  .input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .submitButton {
+    border: 0;
+  }
+}
