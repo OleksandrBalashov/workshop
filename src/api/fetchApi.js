@@ -12,13 +12,21 @@ export const getAll = async () => {
   }
 };
 
-export const updateAdvert = async (_id, body) => {
-  console.log(_id, body);
+export const updateAdvert = async (id, body) => {
   try {
-    const { data } = await axios.put(`/${_id}`, body);
-    console.log(data);
+    const { data } = await axios.put(`/${id}`, body);
 
     return !!data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const findAdvertById = async (id) => {
+  try {
+    const { data } = await axios.get(`/${id}`);
+
+    return data;
   } catch (error) {
     console.log(error);
   }

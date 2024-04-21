@@ -5,7 +5,12 @@ const InputLocation = ({ input }) => {
   return (
     <>
       <label>Location</label>
-      <Input prefix={<EnvironmentOutlined />} variant='filled' {...input} />
+      <Input
+        prefix={<EnvironmentOutlined />}
+        variant='filled'
+        {...input}
+        placeholder='City'
+      />
     </>
   );
 };

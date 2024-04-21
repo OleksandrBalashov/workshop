@@ -8,6 +8,7 @@ import "./advertCard.scss";
 import DetailsList from "../../DetailsList";
 import { updateAdvert } from "../../../api/fetchApi";
 import { useState } from "react";
+import { useAdvertModalContext } from "../../Modal/AdvertModal/ModalContext";
 const { Meta } = Card;
 
 const AdvertCard = ({
@@ -23,6 +24,8 @@ const AdvertCard = ({
   details,
 }) => {
   const [isFavorite, setIsFavorite] = useState(favorite);
+  const { showModal } = useAdvertModalContext();
+
   const handleUpdate = async () => {
     const isUpdated = await updateAdvert(id, { favorite: !isFavorite });
 
@@ -68,7 +71,11 @@ const AdvertCard = ({
             <div className='detailsWrp'>
               <DetailsList details={details} />
             </div>
-            <Button className='showMoreBtn' type='primary'>
+            <Button
+              className='showMoreBtn'
+              type='primary'
+              onClick={() => showModal(id)}
+            >
               Show more
             </Button>
           </div>

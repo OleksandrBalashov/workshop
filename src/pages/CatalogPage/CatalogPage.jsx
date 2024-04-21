@@ -13,10 +13,12 @@ import {
 } from "../../redux/slices/selectors";
 import "./catalogPage.scss";
 import { increasePage } from "../../redux/slices/pageSlice";
+import AdvertModalContext from "../../components/Modal/AdvertModal/ModalContext";
+import AdvertModal from "../../components/Modal/AdvertModal";
 
 const { Content, Sider } = Layout;
 
-const CatalogPage = () => {
+const Catalog = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
   const collection = useSelector(getCollection);
@@ -101,10 +103,17 @@ const CatalogPage = () => {
               Load More
             </Button>
           )}
+          <AdvertModal />
         </Content>
       </Layout>
     </Layout>
   );
 };
+
+const CatalogPage = () => (
+  <AdvertModalContext>
+    <Catalog />
+  </AdvertModalContext>
+);
 
 export default CatalogPage;
