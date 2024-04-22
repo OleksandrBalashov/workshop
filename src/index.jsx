@@ -9,11 +9,13 @@ import "modern-normalize/modern-normalize.css";
 import "./index.scss";
 
 import FavoritesPage from "./pages/FavoritesPage";
+import Header from "./components/Header";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/catalog' element={<CatalogPage />} />

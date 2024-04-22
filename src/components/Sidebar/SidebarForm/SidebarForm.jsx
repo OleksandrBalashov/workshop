@@ -9,6 +9,7 @@ import Filters from "./Filters";
 import { useDispatch } from "react-redux";
 import { addFilters } from "../../../redux/slices/filtersSlice";
 import { resetPage } from "../../../redux/slices/pageSlice";
+import "./sidebarForm.scss";
 
 const SidebarForm = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const SidebarForm = () => {
   };
 
   const render = ({ handleSubmit }) => (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='sidebarFormWrapper'>
       <Field name='location' component={InputLocation} />
       <p>Filters</p>
       <Filters

@@ -1,11 +1,11 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 import { findAdvertById } from "../api/fetchApi";
 
 const useAdvert = (cardId) => {
   const [advert, setAdvert] = useState({});
   const [isFetching, setIsFetching] = useState(false);
 
-  const getAdvertById = async () => {
+  const getAdvertById = useCallback(async () => {
     setIsFetching(true);
 
     try {
@@ -17,7 +17,7 @@ const useAdvert = (cardId) => {
     } finally {
       setIsFetching(false);
     }
-  };
+  }, [cardId]);
 
   return {
     getAdvertById,

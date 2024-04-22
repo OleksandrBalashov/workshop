@@ -16,7 +16,9 @@ const FilterList = ({ filters, filterName, type }) => {
               value={value}
               name={filterName}
             />
-            <label htmlFor={name}>{name}</label>
+            <label htmlFor={name} style={{ marginLeft: 5 }}>
+              {name}
+            </label>
           </li>
         ))}
       </ul>

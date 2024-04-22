@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllAdverts } from "../../redux/slices/thunk";
-import Spinner from "../../components/Spinner";
-import { Button, Layout } from "antd";
+import { Button, Empty, Layout } from "antd";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import CardList from "../../components/CardList";
 import {
@@ -17,6 +16,7 @@ import AdvertModalContext, {
   useAdvertModalContext,
 } from "../../components/Modal/AdvertModal/ModalContext";
 import AdvertModal from "../../components/Modal/AdvertModal";
+import Spinner from "../../components/Spinner";
 
 const { Content, Sider } = Layout;
 
@@ -100,7 +100,7 @@ const Catalog = () => {
         >
           {isLoading && <Spinner />}
           {!isLoading && <CardList collection={pageCollection} />}
-          {!pageCollection.length && <h1>Not Found</h1>}
+          {!pageCollection.length && !isLoading && <Empty />}
           {isLoadMoreVisible && (
             <Button onClick={handleMoreBtn} className='loadMoreButton'>
               Load More

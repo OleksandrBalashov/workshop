@@ -7,7 +7,7 @@ const Spinner = () => (
     visible={true}
     height='40'
     width='40'
-    color='#4fa94d'
+    color='#4e59ef'
     ariaLabel='oval-loading'
   />
 );

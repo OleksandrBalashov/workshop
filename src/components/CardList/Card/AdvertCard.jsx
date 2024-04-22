@@ -1,11 +1,13 @@
 import { Avatar, Card, Button } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
-import "./advertCard.scss";
 import DetailsList from "../../DetailsList";
 import { updateAdvert } from "../../../api/fetchApi";
 import { useState } from "react";
 import { useAdvertModalContext } from "../../Modal/AdvertModal/ModalContext";
+
 import ReviewRating from "../../ReviewRating";
+import "./advertCard.scss";
+
 const { Meta } = Card;
 
 const AdvertCard = ({

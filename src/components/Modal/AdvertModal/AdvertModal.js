@@ -16,7 +16,7 @@ const Advert = () => {
 
   useEffect(() => {
     getAdvertById();
-  }, []);
+  }, [getAdvertById]);
 
   const modalRender = () => {
     const { name, rating, location, reviews, price, gallery, description } =

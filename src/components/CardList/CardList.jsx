@@ -1,7 +1,7 @@
 import AdvertCard from "./Card/AdvertCard";
 import "./cardList.scss";
 
-const CardList = ({ collection, setIsFetching }) => {
+const CardList = ({ collection }) => {
   return (
     <div className='cardListContainer'>
       {collection.map(({ _id, gallery, ...otherProps }) => (
