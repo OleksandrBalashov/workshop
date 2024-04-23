@@ -1,9 +1,9 @@
-import React from "react";
-import sprite from "../../assets/images/sprite.svg";
+import sprite from "../../images/sprite.svg";
+import "./icon.scss";
 
 const Icon = ({ icon }) => {
   return (
-    <svg width={32} height={32}>
+    <svg width={32} height={32} className='iconSprite'>
       <use href={`${sprite}#${icon}`}></use>
     </svg>
   );

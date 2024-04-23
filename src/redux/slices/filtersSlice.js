@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialValues = {
+export const initialValues = {
   form: "",
   location: "",
   vehicleEquipment: [],
@@ -11,9 +11,10 @@ const filtersSlice = createSlice({
   initialState: initialValues,
   reducers: {
     addFilters: (_, { payload }) => ({ ...initialValues, ...payload }),
+    resetFilters: () => initialValues,
   },
 });
 
 export const filtersReducer = filtersSlice.reducer;
 
-export const { addFilters } = filtersSlice.actions;
+export const { addFilters, resetFilters } = filtersSlice.actions;

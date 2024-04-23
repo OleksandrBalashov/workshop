@@ -8,6 +8,7 @@ const Spinner = () => (
     height='40'
     width='40'
     color='#4e59ef'
+    c
     ariaLabel='oval-loading'
   />
 );

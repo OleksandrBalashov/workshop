@@ -1,14 +1,19 @@
 import { Form, Field } from "react-final-form";
 import InputLocation from "./InputLocation";
-import { Button } from "antd";
+import { Button, Tooltip } from "antd";
 import {
   equipmentFilters,
   typeFilters,
 } from "./Filters/FilterList/filterButtons";
 import Filters from "./Filters";
 import { useDispatch } from "react-redux";
-import { addFilters } from "../../../redux/slices/filtersSlice";
+import {
+  addFilters,
+  initialValues,
+  resetFilters,
+} from "../../../redux/slices/filtersSlice";
 import { resetPage } from "../../../redux/slices/pageSlice";
+import { RollbackOutlined } from "@ant-design/icons";
 import "./sidebarForm.scss";
 
 const SidebarForm = () => {
@@ -19,7 +24,7 @@ const SidebarForm = () => {
     dispatch(addFilters(formValues));
   };
 
-  const render = ({ handleSubmit }) => (
+  const render = ({ handleSubmit, form, pristine }) => (
     <form onSubmit={handleSubmit} className='sidebarFormWrapper'>
       <Field name='location' component={InputLocation} />
       <p>Filters</p>
@@ -35,13 +40,31 @@ const SidebarForm = () => {
         filterName='form'
         filters={typeFilters}
       />
-      <Button htmlType='submit' type='primary'>
-        Search
-      </Button>
+      <div className='buttonWrapper'>
+        <Button htmlType='submit' type='primary' size='large'>
+          Search
+        </Button>
+        {!pristine && (
+          <Tooltip title='Remove filters'>
+            <Button
+              type='primary'
+              shape='circle'
+              icon={<RollbackOutlined />}
+              className='removeFilters'
+              onClick={() => {
+                form.reset();
+                dispatch(resetFilters());
+              }}
+            />
+          </Tooltip>
+        )}
+      </div>
     </form>
   );
 
-  return <Form render={render} onSubmit={onSubmit} subscription />;
+  return (
+    <Form render={render} onSubmit={onSubmit} initialValues={initialValues} />
+  );
 };
 
 export default SidebarForm;

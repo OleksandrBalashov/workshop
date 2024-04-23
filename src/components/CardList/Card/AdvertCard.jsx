@@ -32,52 +32,50 @@ const AdvertCard = ({
   };
 
   return (
-    <>
-      <Card style={{ width: "100%", marginTop: 16 }}>
-        <div className='cardWrapper'>
-          <Meta
-            avatar={
-              <Avatar
-                src={src}
-                shape='square'
-                style={{ width: 290, height: 310 }}
-              />
-            }
-          />
-          <div className='detailsWrapper'>
-            <div className='titleWrapper'>
-              <h2 className='title'>{name}</h2>
-              <p className='price'>&#8364;{`${price}`}.00</p>
-              <HeartOutlined
-                className={`icon ${isFavorite ? "active" : ""}`}
-                onClick={handleUpdate}
-              />
-            </div>
-
-            <div className='rating'>
-              <ReviewRating
-                rating={rating}
-                reviews={reviews}
-                location={location}
-              />
-            </div>
-
-            <p className='description'>{description}</p>
-
-            <div className='detailsWrp'>
-              <DetailsList details={details} total={6} />
-            </div>
-            <Button
-              className='showMoreBtn'
-              type='primary'
-              onClick={() => showModal(id)}
-            >
-              Show more
-            </Button>
+    <Card style={{ width: "100%", marginTop: 16 }}>
+      <div className='cardWrapper'>
+        <Meta
+          avatar={
+            <Avatar
+              src={src}
+              shape='square'
+              style={{ width: 290, height: 310 }}
+            />
+          }
+        />
+        <div className='detailsWrapper'>
+          <div className='titleWrapper'>
+            <h2 className='title'>{name}</h2>
+            <p className='price'>&#8364;{`${price}`}.00</p>
+            <HeartOutlined
+              className={`icon ${isFavorite ? "active" : ""}`}
+              onClick={handleUpdate}
+            />
           </div>
+
+          <div className='rating'>
+            <ReviewRating
+              rating={rating}
+              reviews={reviews}
+              location={location}
+            />
+          </div>
+
+          <p className='description'>{description}</p>
+
+          <div className='detailsWrp'>
+            <DetailsList details={details} total={6} />
+          </div>
+          <Button
+            className='showMoreBtn'
+            type='primary'
+            onClick={() => showModal(id)}
+          >
+            Show more
+          </Button>
         </div>
-      </Card>
-    </>
+      </div>
+    </Card>
   );
 };
 

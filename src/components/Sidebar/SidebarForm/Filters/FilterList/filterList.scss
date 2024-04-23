@@ -1,7 +1,7 @@
 .filterList {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -9,7 +9,30 @@
   border-radius: 3px;
 
   li {
-    margin-right: 20px;
+    input {
+      display: none;
+
+      &:checked + label {
+        border: 1px solid red;
+      }
+    }
+
+    label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 5px;
+      font-size: 14px;
+      width: 95px;
+      min-height: 95px;
+      padding: 5px;
+      border: 1px solid rgb(161, 161, 161);
+      border-radius: 10px;
+      word-wrap: break-word;
+      cursor: pointer;
+    }
   }
 
   &:first-child {

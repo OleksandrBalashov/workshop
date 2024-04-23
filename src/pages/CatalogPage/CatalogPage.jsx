@@ -1,12 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllAdverts } from "../../redux/slices/thunk";
 import { Button, Empty, Layout } from "antd";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import CardList from "../../components/CardList";
 import {
-  getCollection,
-  getFilters,
+  getFilteredCollection,
   getIsLoading,
   getPage,
 } from "../../redux/slices/selectors";
@@ -23,30 +22,13 @@ const { Content, Sider } = Layout;
 const Catalog = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
-  const collection = useSelector(getCollection);
-  const filters = useSelector(getFilters);
+  const filteredCollection = useSelector(getFilteredCollection);
+
   const page = useSelector(getPage);
   const { isOpen, cardId } = useAdvertModalContext();
 
   const [pageCollection, setPageCollection] = useState([]);
   const [postsPerPage] = useState(4);
-
-  const filteredCollection = useMemo(() => {
-    const filtered = collection
-      .filter((item) => item.form.includes(filters.form))
-      .filter((item) =>
-        item.location.toLowerCase().includes(filters.location.toLowerCase())
-      )
-      .filter((item) =>
-        filters.vehicleEquipment.length
-          ? filters.vehicleEquipment.every(
-              (filter) => item[filter] || item.details[filter]
-            )
-          : item
-      );
-
-    return filtered;
-  }, [collection, filters]);
 
   const isLoadMoreVisible = pageCollection.length < filteredCollection.length;
 

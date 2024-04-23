@@ -1,4 +1,5 @@
 import axios from "axios";
+
 axios.defaults.baseURL =
   "https://661a1d27125e9bb9f29b589a.mockapi.io/api/adverts";
 
@@ -8,7 +9,7 @@ export const getAll = async () => {
 
     return data;
   } catch (error) {
-    console.log(error);
+    throw new Error();
   }
 };
 
@@ -18,7 +19,7 @@ export const updateAdvert = async (id, body) => {
 
     return !!data;
   } catch (error) {
-    console.log(error);
+    throw new Error();
   }
 };
 

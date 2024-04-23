@@ -1,3 +1,11 @@
 .sidebarFormWrapper {
   padding: 15px;
+
+  .buttonWrapper {
+    display: flex;
+
+    .removeFilters {
+      margin-left: auto;
+    }
+  }
 }
