@@ -1,8 +1,8 @@
 {
-  "name": "workwhop_test",
+  "name": "workshop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://OleksandrBalashov/workshop",
+  "homepage": "https://github.com/OleksandrBalashov/workshop",
   "dependencies": {
     "@ant-design/icons": "^5.3.6",
     "@reduxjs/toolkit": "^2.2.3",
