@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/workshop/static/css/main.766f26d2.css",
-    "main.js": "/workshop/static/js/main.cf06f02b.js",
-    "static/media/sprite.svg": "/workshop/static/media/sprite.23de6a1d400a10d4963708f7c142e747.svg",
-    "index.html": "/workshop/index.html",
-    "main.766f26d2.css.map": "/workshop/static/css/main.766f26d2.css.map",
-    "main.cf06f02b.js.map": "/workshop/static/js/main.cf06f02b.js.map"
+    "main.css": "/OleksandrBalashov/workshop/static/css/main.766f26d2.css",
+    "main.js": "/OleksandrBalashov/workshop/static/js/main.de9c055e.js",
+    "static/media/sprite.svg": "/OleksandrBalashov/workshop/static/media/sprite.23de6a1d400a10d4963708f7c142e747.svg",
+    "index.html": "/OleksandrBalashov/workshop/index.html",
+    "main.766f26d2.css.map": "/OleksandrBalashov/workshop/static/css/main.766f26d2.css.map",
+    "main.de9c055e.js.map": "/OleksandrBalashov/workshop/static/js/main.de9c055e.js.map"
   },
   "entrypoints": [
     "static/css/main.766f26d2.css",
-    "static/js/main.cf06f02b.js"
+    "static/js/main.de9c055e.js"
   ]
 }
