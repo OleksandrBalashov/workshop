@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("https://image.geo.de/30152076/t/Gl/v3/w1440/r1.7778/-/roadtrip-banff-nationalpark-icefields-parkway-s-1517645057-jpg--86765-.jpg");
+  background-image: url('https://image.geo.de/30152076/t/Gl/v3/w1440/r1.7778/-/roadtrip-banff-nationalpark-icefields-parkway-s-1517645057-jpg--86765-.jpg');
 
   .homeTitle {
     font-size: 40px;
@@ -14,11 +14,13 @@
   }
 
   #seeCatalogBtn {
+    padding: 20px;
     color: #fff;
-    background: blue;
+    background: rgb(42, 42, 249);
+    border-radius: 20px;
 
     &:hover {
-      background: rgb(74, 135, 248);
+      background: rgb(41, 114, 248);
     }
   }
 }
