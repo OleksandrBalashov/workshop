@@ -1,11 +1,22 @@
+:root {
+  --primary-color: #101828;
+  --grey-color: #475467;
+  --red-color: #e44848;
+  --white-color: #fff;
+  --secondary-white: #f2f4f7;
+  --blue-color: #1677ff;
+  --dark-blue: #0000bb;
+  --desc-color: rgb(166, 163, 163);
+}
+
 body {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 1.25;
   color: #101828;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "slnt" 0;
+  font-variation-settings: 'slnt' 0;
 }

@@ -9,18 +9,18 @@
   .homeTitle {
     font-size: 40px;
     text-align: center;
-    color: #fff;
+    color: var(--white-color);
     text-shadow: 0 0 0.15em #000000;
   }
 
   #seeCatalogBtn {
     padding: 20px;
     color: #fff;
-    background: rgb(42, 42, 249);
+    background: var(--dark-blue);
     border-radius: 20px;
 
     &:hover {
-      background: rgb(41, 114, 248);
+      background: var(--blue-color);
     }
   }
 }
